@@ -1,0 +1,262 @@
+/* Global Resets and Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa; /* Light gray background */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Header and Navigation */
+header {
+  background-color: #343a40; /* Dark gray header */
+  color: #ffffff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header ul li {
+  margin-left: 25px;
+}
+
+header ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+header ul li a:hover,
+header ul li a:focus {
+  color: #00bcd4; /* Accent color for hover */
+}
+
+/* General Section Styling */
+section {
+  padding: 60px 20px;
+  max-width: 960px;
+  margin: 40px auto; /* Add some margin between sections */
+  background-color: #ffffff; /* White background for content sections */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+section:first-of-type {
+    margin-top: 0; /* Remove top margin for the first section if header is sticky */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #343a40; /* Dark heading color */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Underline effect for section titles */
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #007bff; /* Primary color for underline */
+  margin: 8px auto 0;
+}
+
+/* Hero Section (#home) */
+.hero {
+  text-align: center;
+  background-color: #e9ecef; /* Slightly different background for hero */
+  padding-top: 80px; /* Extra padding if header is sticky */
+  padding-bottom: 80px;
+  margin-top: 0; /* Hero section is usually at the very top */
+  border-radius: 0; /* Full width hero often doesn't have rounded corners */
+  box-shadow: none;
+}
+
+.hero .profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  margin-bottom: 25px;
+  border: 6px solid #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.hero h2 { /* "Hi, I'm a Web Developer" */
+  font-size: 2.8rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #212529;
+}
+
+.hero h2::after { /* Remove general section title underline for this specific h2 */
+    display: none;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #495057;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* About Me Section (#about) */
+#about h3 {
+  font-size: 1.6rem;
+  color: #007bff; /* Primary color for subheadings */
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#about p,
+#about ul li {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#about ul {
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+/* Projects Section (#Projects) */
+/* Styles for individual project containers (div with class .Projects) */
+.Projects { /* Note: Class name "Projects" is used for individual items */
+  background-color: #f8f9fa; /* Light background for project cards */
+  border: 1px solid #dee2e6;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.Projects:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.Projects h3 {
+  font-size: 1.5rem;
+  color: #007bff; /* Primary color for project titles */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.Projects p {
+  font-size: 1rem;
+  color: #495057;
+  line-height: 1.7;
+}
+
+/* Contact Section (#contact) */
+#contact {
+  text-align: center;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#contact p strong {
+  color: #007bff;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40; /* Dark gray footer */
+  color: #adb5bd; /* Lighter text color for footer */
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    margin-bottom: 15px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  header ul li {
+    margin: 10px 0;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  section h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .hero .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
